@@ -8,7 +8,7 @@ Página inicial do site para usuários que ainda não se conectaram em suas cont
 ---
 
 ###### 1.1.1.1.2 Relacionamentos com outras interfaces
-Com o sucesso no login, será direcionado para a Interface de Visão de Veículos Visitantes, exibindo um modal solicitando para selecionar a portaria na qual o usuário irá trabalhar.
+Com o sucesso no login, será direcionado para a interface/página de Veículos Visitantes (1.1.1.2), exibindo um modal solicitando para selecionar a portaria na qual o usuário irá trabalhar.
 
 ---
 
