@@ -21,7 +21,7 @@ Botão de cadastrar novo veículo se relaciona com a visão/página de formulár
 |        |      |           |                 |         |      |            |
 |    1    |   Busca   |     Campos de busca para pesquisar qualquer dado de veículos visitantes cadastrados anteriormente.      |        Placa, modelo ou cor.         |    Texto     |   Textarea   |      *      |
 |    2    |   ID cadastro   |      Identificador único do veículo visitante cadastrado     |        ID         |     Não nulo.    |   ID.   |     Todos os cadastros devem possuir um.       |
-|    3    |   Placa   |     Apresenta a placa do véiculo na lista de veículos visitantes cadastrados      |     Não nulos.   |    Placa     |   Text.   |     *       |
+|    3    |   Placa   |     Apresenta a placa do veículo na lista de veículos visitantes cadastrados      |     Não nulos.   |    Placa     |   Text.   |     *       |
 |    4    |   Tempo dentro   |     Tempo no qual o veículo está ou esteve dentro do condomínio      |     Não nulo.            |    Difereça entre o tempo de chegada e atual ou saída     |   Time   |     Tempo válido.       |
 |    5    |   Status   |     Status se o veículo visitante permanece ou já saiu do condomínio      |        Dentro/Fora         |    *     |   *   |      Apenas essas duas opções, não terá como voltar atrás após marcar como fora.      |
 
