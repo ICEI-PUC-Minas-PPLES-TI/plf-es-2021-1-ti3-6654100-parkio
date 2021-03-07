@@ -17,7 +17,6 @@ Será possível acessar um cadastro de um veículo por meio da visão/página de
 ###### 1.1.1.3.3 Campos
 | Número | Nome | Descrição | Valores válidos | Formato | Tipo | Restrições |
 | :----: | :--: | --------- | --------------- | :-----: | :--: | ---------- |
-|        |      |           |                 |         |      |            |
 |    1    |   ID cadastro   |      Identificador único do veículo visitante cadastrado     |        ID         |     Não nulo.    |   ID.   |     Todos os cadastros devem possuir um.       |
 |    2    |   Placa   |     Apresenta a placa do véiculo visitante cadastrado.      |     Não nulos.   |    Placa     |   Text.   |     *       |
 |    3    |   Tempo dentro   |     Tempo no qual o veículo está ou esteve dentro do condomínio      |     Não nulo.            |    Difereça entre o tempo de chegada e atual ou saída     |   Time   |     Tempo válido.       |
@@ -34,5 +33,4 @@ Será possível acessar um cadastro de um veículo por meio da visão/página de
 ###### 1.1.1.3.4 Comandos
 | Número | Nome | Ação | Restrições |
 | :----: | :--: | ---- | ---------- |
-|        |      |      |            |
 |    1    |   Saída de veículo    |   Marcar que veículo visitante saiu do condomínio.   |      Somente veículos que ainda não sairam.      |

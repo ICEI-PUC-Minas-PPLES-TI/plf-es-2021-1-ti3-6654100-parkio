@@ -18,7 +18,6 @@ Botão de cadastrar novo veículo se relaciona com a visão/página de formulár
 ###### 1.1.1.2.3 Campos
 | Número | Nome | Descrição | Valores válidos | Formato | Tipo | Restrições |
 | :----: | :--: | --------- | --------------- | :-----: | :--: | ---------- |
-|        |      |           |                 |         |      |            |
 |    1    |   Busca   |     Campos de busca para pesquisar qualquer dado de veículos visitantes cadastrados anteriormente.      |        Placa, modelo ou cor.         |    Texto     |   Textarea   |      *      |
 |    2    |   ID cadastro   |      Identificador único do veículo visitante cadastrado     |        ID         |     Não nulo.    |   ID.   |     Todos os cadastros devem possuir um.       |
 |    3    |   Placa   |     Apresenta a placa do veículo na lista de veículos visitantes cadastrados      |     Não nulos.   |    Placa     |   Text.   |     *       |
@@ -30,7 +29,6 @@ Botão de cadastrar novo veículo se relaciona com a visão/página de formulár
 ###### 1.1.1.2.4 Comandos
 | Número | Nome | Ação | Restrições |
 | :----: | :--: | ---- | ---------- |
-|        |      |      |            |
 |    1    |   Filtro por período.   |     Filtrar veículos cadastrados em um certo período de tempo definido.      | Que seja um período válido.       |
 |    2    |   Ordenar por últimos cadastrados    |   Ordenar a lista de veículos cadastrados pelos últimos cadastrados por todos os usuários na portaria logada.   |      *      |
 |    3    |   Ordenar por mais tempo dentro    |   Ordenar a lista de veículos cadastrados veículos cadastrados que estão a mais tempo dentro do condomínio.   |      *      |
