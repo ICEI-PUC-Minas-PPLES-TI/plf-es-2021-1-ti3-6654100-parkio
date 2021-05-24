@@ -25,13 +25,56 @@ class DestinationService
     return $d->paginate(200);
   }
 
-  public function createDestination($block,int $apartament){
+  public function create($block, $apartament){
     $destination = new Destination();
     $destination->block = strtoupper($block);
     $destination->apartament = $apartament;
     $destination->save();
 
     return $destination->id;
+  }
+
+  public function update(int $id, $block, $apartament){
+    $message = 'Destino editado com sucesso';
+
+    $destination = $this->search($id);
+
+    $destination->block = strtoupper($block);
+    $destination->apartament = $apartament;
+    $destination->update();
+    return [
+        'message' => $message,
+        'updated' => true
+    ];
+
+
+}
+  
+  public function delete(int $id)
+  {
+      $message = 'Destino removido com sucesso';
+      $this->search($id)->delete();
+      return [
+          'message' => $message,
+          'deleted' => true 
+      ];
+
+
+  }
+
+
+  public function search(int $id)
+  {
+      $destination = Destination::find($id);
+      
+      if(!empty($destination)){
+
+          return $destination;
+
+      }else {
+          throw new \Exception("Destination Not Found", 404);
+      }
+
   }
 
 }

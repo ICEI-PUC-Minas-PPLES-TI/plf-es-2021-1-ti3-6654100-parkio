@@ -41,6 +41,9 @@ $router->group(['prefix' => '/api'], function () use ($router) {
         $router->put('/gate', ['uses' => 'GateController@update', 'auth' => ['A']]); // Update a gate
 
         $router->get('/destinations', ['uses' => 'DestinationController@getAll', 'auth' => ['A', 'P']]);
+        $router->post('/destinations', ['uses' => 'DestinationController@create', 'auth' => ['A']]);
+        $router->put('/destinations/{id}', ['uses' => 'DestinationController@update', 'auth' => ['A']]);
+        $router->delete('/destinations/{id}', ['uses' => 'DestinationController@delete', 'auth' => ['A']]);
 
         $router->get('/visitorCategory', ['uses' => 'VisitorCategoryController@getAll', 'auth' => ['A', 'P']]); // Route path (used for requests), Controller (Same name as in folder)@Public_function_name
         $router->post('/visitorCategory', ['uses' => 'VisitorCategoryController@create', 'auth' => ['A']]); // Route path (used for requests), Controller (Same name as in folder)@Public_function_name
