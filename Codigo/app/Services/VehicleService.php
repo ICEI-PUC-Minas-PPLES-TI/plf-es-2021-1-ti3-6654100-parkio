@@ -2,12 +2,15 @@
 
 namespace App\Services;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+use App\Services\DestinationService;
+use App\Services\VisitorCategoryService;
 use App\Models\Vehicle;
 use App\Models\User;
 use App\Models\Complain;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Http;
 
 class VehicleService
 {
@@ -166,44 +169,6 @@ class VehicleService
             }
         } else {
             throw new \Exception("Vehicle Not Found", 404);
-        }
-    }
-
-
-    /**
-     * Get inside vehicles that did not leave before planned
-     *
-     * @return void
-     */
-    public function findDelayed(){
-        // Get vehicles that was supposed to have left until the minute running this event
-        $vehicles = Vehicle::where(DB::raw("DATE_FORMAT((created_at + INTERVAL `time` MINUTE), '%Y-%m-%d %H:%i')"), DB::raw("DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i')"))
-                                ->whereNull('left_at')
-                                ->get(['plate','model','driver_name']);
-        foreach($vehicles as $v){
-            $text = "Veículo de placa ".$v->plate." ultrapassou o horário limite (Horário previsto: ".date("H:i").")";
-
-            if(!empty($v->model) || !empty($v->driver_name))
-                $text .= "\n\nInformações adicionais:";
-
-            if(!empty($v->model))
-                $text .= "\nModelo: ".$v->model;
-
-            if(!empty($v->driver_name))
-                $text .= "\nMotorista: ".$v->driver_name;
-
-            //Encode characters and spaces for request
-            $text = urlencode($text);
-
-            //Telegram send message endpoint
-            $ch = curl_init("https://api.telegram.org/bot".env('TELEGRAMBOTTOKEN')."/sendMessage?chat_id=".env('TELEGRAMGROUPID')."&text=$text");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            if(env('APP_DEBUG')) { // Desabilitar verificação de SSL
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-            }
-            $result = curl_exec($ch);
-            curl_close($ch);
         }
     }
 
