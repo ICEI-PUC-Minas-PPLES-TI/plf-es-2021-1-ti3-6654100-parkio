@@ -12,7 +12,8 @@ class WebMiddleware
     public function handle($request, Closure $next, $guard = null)
     {
         $token = $request->cookie('X-token');
-        View::share('colormode', $request->cookie('X-colormode'));
+        $colorMode = !empty($request->cookie('X-colormode')) ? $request->cookie('X-colormode'): 'dark';
+        View::share('colormode', $colorMode);
         
         if(!$token) {
             // Unauthorized response if token not there
