@@ -1,0 +1,31 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: ParkIO
+authors:
+  - family-names: Gabriel Silva Pereira
+    given-names: Guilherme
+  - family-names: Penna Forte Monteiro
+    given-names: Henrique
+  - family-names: Maurício Guimarães França
+    given-names: José
+  - family-names: Ângelo Oliveira Martins Rocha
+    given-names: Lucas
+  - family-names: Boaventura Goes Campos
+    given-names: Victor
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alonso Veloso
+    given-names: Eveline
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Amaral Baroni De Carvalho
+    given-names: Juliana
+keywords:
+  - Controle
+  - Portaria
+  - Veículos
+  - Apartamento
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2021-1-ti3-6654100-parkio
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2021-06-20
